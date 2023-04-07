@@ -1,0 +1,19 @@
+{
+  "name": "personal-dictionary",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "parcel index.html --open --port 3000"
+  },
+  "author": "Dmitrij Stakhovich <dmitrijstahovic@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "f": "^1.4.0",
+    "fb": "^2.0.0",
+    "firebase": "^9.17.1",
+    "scr": "^1.0.0",
+    "scripts": "^0.1.0",
+    "variables": "^1.0.1"
+  }
+}
