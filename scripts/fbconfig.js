@@ -114,7 +114,7 @@ function loginWithEmail (email, password) {
 
 // exports-----------------------------------------------------------------------------
 export {
-	googleAutentification, user, auth, onAuthStateChanged, onSnapshot, showTexts, 
+	googleAutentification, user, auth, onAuthStateChanged, onSnapshot, showTexts, updateDoc,
 	signingOut, createNewAccount, loginWithEmail, doc, db, collection, addDoc, serverTimestamp
 }
 

@@ -7,7 +7,7 @@ import {
 } from './variables'
 
 import {
-auth, googleAutentification, createNewAccount, loginWithEmail
+auth, googleAutentification, createNewAccount, loginWithEmail, doc, db
 } from './fbconfig'
 
 import {
@@ -116,7 +116,9 @@ document.addEventListener('click', (e) => {
 // save text
 document.addEventListener('click', (e)=>{
 	if(e.target.classList.contains('save-text-popup__save-button')) {
-		addToCol()
+		const file = doc(db, "USERS", 'users collections')
+		const title = document.querySelector('.save-text-popup__input').value
+		addToCol(file, title)
 		closePopup()
 		clearAny(e)
 	}

@@ -25,12 +25,11 @@ let rememberReds = []
 
 // functions
 
-const addToCol = ()=>{
+const addToCol = (file, title)=>{
 	const input = document.querySelector('.input__textarea')
-	const title = document.querySelector('.save-text-popup__input').value
 	const text = document.querySelector('.input__wrapped-area').innerHTML
 	const coloredWords = document.querySelector('.translated__area').innerHTML
-	const file = doc(db, "USERS", 'users collections')
+	
 	const col = collection(file, `${auth.currentUser.email}`)
 	addDoc(col, {
 		input: input.value,
@@ -227,7 +226,7 @@ async function deployTranslate (e) {
 			</div>
 		</section>
 		<section class="add-dictionary">
-			<button class="add-dictionary__add-button">
+			<button class="add-dictionary__add-button list-save-button">
 				Сохранить
 			</button>
 		</section>

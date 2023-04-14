@@ -5,11 +5,11 @@ import {deployLanguagesList, tagDeployedLanguageList,
 // import './scripts/title'
 
 import {
-	googleAutentification, user, auth, onAuthStateChanged, onSnapshot, showTexts, 
+	googleAutentification, user, auth, onAuthStateChanged, onSnapshot, showTexts, updateDoc,
 	signingOut, createNewAccount, loginWithEmail, doc, db, collection, addDoc, serverTimestamp
 } from './scripts/fbconfig'
 
-import {copyToClipboard, rememberReds, deployTranslate} from './scripts/functions'
+import {copyToClipboard, rememberReds, deployTranslate, addToCol} from './scripts/functions'
 
 document.addEventListener('click', (e)=> {
 	copyToClipboard(e, document.querySelector('.translated__area'))
@@ -45,9 +45,40 @@ savedTextsList.addEventListener('click', (e)=>{
 deployText(e)
 })
 
+// save new text
+document.addEventListener('click', async (e)=>{
+	if(e.target.classList.contains('list-save-button')) {
+		const docName = e.target.closest('.list__item').dataset.id
+		console.log(docName)
+		const file = await doc(db, "USERS", 'users collections', `${auth.currentUser.email}`, `${docName}`)
+		// const properties = await JSON.parse(e.target.closest('.list__item').dataset.object)
+		// const title = properties.title
+		// console.log(title)
+		// console.log(file)
+		// addToCol(file, title)
+
+		// console.log(rememberReds)
+		const input = document.querySelector('.input__textarea')
+		const text = document.querySelector('.input__wrapped-area').innerHTML
+		const coloredWords = document.querySelector('.translated__area').innerHTML
+
+		const data = {
+			input: input.value,
+			pickedWords: coloredWords,
+			text: text,
+			pickedWordsArray: rememberReds
+		}
+		updateDoc(file, data)
+	}
+})
+
 savedTextsList.addEventListener('click', (e)=>{
-	if (e.target.classList.contains('list__item-title') ) {
+	// if (e.target.classList.contains('list__item-title') && e.target.closest('.list__item').querySelector('.list__item-subtitle-add') || e.target.classList.contains('title__close-button')) {
+		if (e.target.classList.contains('title__close-button')) {
 	closeTranslation(e)
+	}
+	else if(e.target.classList.contains('list__item-title') && e.target.closest('.list__item').querySelector('.list__item-subtitle-add')){
+		closeTranslation(e)
 	}
 })
 
@@ -63,13 +94,13 @@ function openTranslation (e) {
 }
 
 function deployText (e) {
-	if (e.target.classList.contains('list__item-title') ) {
+	if (e.target.classList.contains('list__item-title')) {
 		// console.log(e.target.closest('.list__item').querySelector('.subtitle-title'))
 		// if (e.target.closest('.list__item').querySelector('.subtitle-title').classList.contains('open')) {
 		// 	e.target.closest('.list__item').querySelector('.subtitle-title').classList.remove('open')
 		// }
 		// else {
-		closeTranslation(e)
+		// closeTranslation(e)
 			e.target.closest('.list__item').querySelector('.list__item-subtitle').classList.toggle('open')
 		}
 		
@@ -78,13 +109,13 @@ function deployText (e) {
 // }
 
 function closeTranslation(e) {
-if (e.target.classList.contains('title__close-button')) {
+// if (e.target.classList.contains('title__close-button')) {
 	// console.log(e.taget.closest('.list__item-subtitle-add'))
 	document.querySelector('.list__item-subtitle-add').remove()
 	// e.target.closest('.list__item').querySelector('.subtitle-title').classList.remove('open')
 	// e.target.closest('.list__item').querySelector('.subtitle').classList.add('open')
 
-}
+// }
 }
 
 
@@ -237,7 +268,7 @@ const x =  `<li class="list__item"> <span class="list__item-title">ввОтры�
 		</div>
 	</section>
 	<section class="add-dictionary">
-		<button class="add-dictionary__add-button">
+		<button class="add-dictionary__add-button list-save-button">
 			Сохранить
 		</button>
 	</section>
