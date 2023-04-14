@@ -46822,44 +46822,16 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.copyButton = exports.addToDictionaryButton = void 0;
-// page-sections(buttons):
-// header
-
-// input-section
-
-// output-section
-
 var copyButton = document.querySelector('.copy-button');
 // add-dictionary-section(button)
 exports.copyButton = copyButton;
 var addToDictionaryButton = document.querySelector('.add-dictionary__add-button');
 // contacts footer
 exports.addToDictionaryButton = addToDictionaryButton;
-var contactsFooter = document.querySelector('.contacts');
-// popups
-
-// const authPopupCloseButton = authPopup.querySelector('.close-button')
-},{}],"scripts/output.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.outputSection = exports.outputField = void 0;
-var outputSection = document.querySelector('.output');
-exports.outputSection = outputSection;
-var outputField = document.querySelector('.translated__area');
-exports.outputField = outputField;
 },{}],"scripts/input.js":[function(require,module,exports) {
 "use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.wrappedInputField = exports.inputField = void 0;
 var _functions = require("./functions");
-var _output = require("./output");
-var _title = require("./title");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -46867,17 +46839,18 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, defineProperty = Object.defineProperty || function (obj, key, desc) { obj[key] = desc.value; }, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) }), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; defineProperty(this, "_invoke", { value: function value(method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; } function maybeInvokeDelegate(delegate, context) { var methodName = context.method, method = delegate.iterator[methodName]; if (undefined === method) return context.delegate = null, "throw" === methodName && delegate.iterator.return && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method) || "return" !== methodName && (context.method = "throw", context.arg = new TypeError("The iterator does not provide a '" + methodName + "' method")), ContinueSentinel; var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), defineProperty(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (val) { var object = Object(val), keys = []; for (var key in object) keys.push(key); return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, catch: function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-var inputBlock = document.querySelector('.input');
-var inputField = document.querySelector('.input__textarea');
-exports.inputField = inputField;
-var wrappedInputField = document.querySelector('.input__wrapped-area');
+// import {outputField, outputSection } from './output'
+// import { sourceLanguageButton, targetLanguageButton } from './title'
+
+// const inputBlock = document.querySelector('.input')
+// const inputField = document.querySelector('.input__textarea')
+// const wrappedInputField = document.querySelector('.input__wrapped-area')
 
 // make wrapped words block from input value
-exports.wrappedInputField = wrappedInputField;
 document.addEventListener('input', function (e) {
   if (e.target.classList.contains('input__textarea')) {
-    var _inputField = e.target;
-    if (_inputField.value == '') {
+    var inputField = e.target;
+    if (inputField.value == '') {
       (0, _functions.clearAny)(e);
     } else {
       document.querySelector('.input__wrapped-area').classList.add('open');
@@ -46887,18 +46860,6 @@ document.addEventListener('input', function (e) {
     }
   }
 });
-
-// inputField.addEventListener('input', (e)=>{
-// 	if(inputField.value == '') {
-// 		clearAny(e)
-// 		}
-// 	else {
-// 		wrappedInputField.classList.add('open')
-// 		makeArrayFromInputValue()
-// 		keepSingled()
-// 		checkIfWordsFromColoredArrayYetExist()
-// 	}
-// })
 
 // delete input
 document.addEventListener('click', function (e) {
@@ -46911,22 +46872,9 @@ document.addEventListener('click', function (e) {
 document.addEventListener('click', function (e) {
   if (e.target.classList.contains('word') && e.target.closest('.input__wrapped-area')) {
     singleOut(e);
-    makePickedList(wrappedInputField);
+    makePickedList(document.querySelector('.input__wrapped-area'));
   }
 });
-// wrappedInputField.addEventListener('click', (e)=>{
-// 	singleOut(e)
-// 	makePickedList(wrappedInputField)
-// })
-
-// function makeArrayFromInputValue () {
-// 	const inputValue = inputField.value
-// 	const inputWordsArray = inputValue.split(' ')
-// 	const additionalTag = ''
-// 	wrapWords(inputWordsArray, wrappedInputField, additionalTag)
-// 	makeSpacesInText(wrappedInputField)
-// }
-
 function makeArrayFromInputValue() {
   var inputValue = document.querySelector('.input__textarea').value;
   var inputWordsArray = inputValue.split(' ');
@@ -46953,7 +46901,7 @@ function checkIfWordsFromColoredArrayYetExist() {
   _functions.rememberReds.forEach(function (elem) {
     if (!cleanedWords.includes(elem.word)) {
       (0, _functions.removeWords)(_functions.rememberReds, elem.word);
-      makePickedList(wrappedInputField);
+      makePickedList(document.querySelector('.input__wrapped-area'));
     }
   });
 }
@@ -47052,13 +47000,11 @@ function _makeTranstlation() {
           elem.translation = translation;
           words += "<span class=\"word\"> ".concat(elem.word, " -|- ").concat(elem.translation, "</span> </br>");
           field.innerHTML = words;
-          // console.log(array)
           _context2.next = 16;
           break;
         case 14:
           words += "<span class=\"word\"> ".concat(elem.word, " -|- ").concat(elem.translation, "</span> </br>");
           field.innerHTML = words;
-          // console.log(array)
         case 16:
           _context2.next = 4;
           break;
@@ -47083,7 +47029,7 @@ function _makeTranstlation() {
 }
 function translateRequest(_x4, _x5, _x6) {
   return _translateRequest.apply(this, arguments);
-}
+} // export { inputField, wrappedInputField }
 function _translateRequest() {
   _translateRequest = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(word, sourceLang, targetLang) {
     var options;
@@ -47114,7 +47060,18 @@ function _translateRequest() {
   }));
   return _translateRequest.apply(this, arguments);
 }
-},{"./functions":"scripts/functions.js","./output":"scripts/output.js","./title":"scripts/title.js"}],"scripts/functions.js":[function(require,module,exports) {
+},{"./functions":"scripts/functions.js"}],"scripts/output.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.outputSection = exports.outputField = void 0;
+var outputSection = document.querySelector('.output');
+exports.outputSection = outputSection;
+var outputField = document.querySelector('.translated__area');
+exports.outputField = outputField;
+},{}],"scripts/functions.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -47138,7 +47095,9 @@ var rememberReds = [];
 
 // functions
 exports.rememberReds = rememberReds;
-var addToCol = function addToCol(file, title) {
+var addToCol = function addToCol() {
+  var file = (0, _fbconfig.doc)(_fbconfig.db, "USERS", 'users collections');
+  var title = document.querySelector('.save-text-popup__input').value;
   var input = document.querySelector('.input__textarea');
   var text = document.querySelector('.input__wrapped-area').innerHTML;
   var coloredWords = document.querySelector('.translated__area').innerHTML;
@@ -47163,12 +47122,6 @@ function clearAny(e) {
   exports.rememberReds = rememberReds = [];
   document.querySelector('.translated__area').innerHTML = "\u0421\u043F\u0438\u0441\u043E\u043A \u0441\u043B\u043E\u0432, <br/> \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u0442\u044B \u0445\u043E\u0447\u0435\u0448\u044C <br/> \u0432\u044B\u0443\u0447\u0438\u0442\u044C,  \u0441 <br/> \u043F\u0435\u0440\u0435\u0432\u043E\u0434\u043E\u043C";
   document.querySelector('.input__wrapped-area').classList.remove('open');
-  // inputField.value = ''
-  // wrappedInputField.innerHTML = ''
-  // saveTextInput.value = ''
-  // rememberReds = []
-  // outputField.innerHTML = `Список слов, <br/> которые ты хочешь <br/> выучить,  с <br/> переводом`
-  // wrappedInputField.classList.remove('open')
 }
 function copyToClipboard(_x, _x2) {
   return _copyToClipboard.apply(this, arguments);
@@ -47217,11 +47170,9 @@ function removeWords(array, target) {
 
   array.length = j; // обновляем размер массива
 }
-
-// exports
 function deployTranslate(_x3) {
   return _deployTranslate.apply(this, arguments);
-}
+} // exports
 function _deployTranslate() {
   _deployTranslate = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(e) {
     var li, properties, liValue;
@@ -47229,7 +47180,7 @@ function _deployTranslate() {
       while (1) switch (_context2.prev = _context2.next) {
         case 0:
           if (!e.target.classList.contains('subtitle__add-button')) {
-            _context2.next = 13;
+            _context2.next = 10;
             break;
           }
           li = e.target.closest('.list__item').querySelector('.list__container');
@@ -47237,16 +47188,13 @@ function _deployTranslate() {
           return JSON.parse(e.target.closest('.list__item').dataset.object);
         case 4:
           properties = _context2.sent;
-          console.log(properties);
-          _context2.next = 8;
+          _context2.next = 7;
           return properties.pickedWordsArray;
-        case 8:
+        case 7:
           exports.rememberReds = rememberReds = _context2.sent;
-          console.log(rememberReds);
           liValue = li.innerHTML;
-          li.innerHTML = "\n\t\t<div class=\"list__item-subtitle-add subtitle-title open\">\n\t\t<secton class=\"list-translate-title title \">\n\t\t\t<button class=\"title__close-button close-button\">\n\t\t\t\t<img class=\"title__close-button close-button-line1\" src=\"/img/input/1.svg\" alt=\"line\">\n\t\t\t\t<img class=\"title__close-button close-button-line2\" src=\"/img/input/2.svg\" alt=\"line\">\n\t\t\t</button>\n\t\t\t<div class=\"title__language-buttons buttons\">\n\t\t\t\t<button class=\"buttons__button buttons__source-button\" data-language=\"en\">english</button>\n\t\t\t\t<button class=\"buttons__reverse-button\">\n\t\t\t\t\t<img class=\"buttons__reverse-button\" src=\"img/header/2.svg\" alt=\"strict\">\n\t\t\t\t\t<img class=\"buttons__reverse-button\" src=\"img/header/3.svg\" alt=\"strict\">\n\t\t\t\t</button>\n\t\t\t\t<button class=\"buttons__button buttons__target-button\" data-language=\"ru\">russian</button>\n\t\t\t\t<button class=\"buttons__signout\">Sign out</button>\n\t\t\t</div>\n\t\t\t<div class=\"languages-list\">\n\t\t\t\t<ul class=\"languages-list__ul ul\">\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">A</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li ul__li-auto\" data-language=\"auto\">Auto Detect</li>\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"ar\">Arabic</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">C</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"zh\">Chinese</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">E</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"en\">English</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">F</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"fr\">French</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">G</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"de\">German</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">H</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"hi\">Hindi</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">I</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"id\">Indonesian</li>\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"ga\">Irish</li>\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"it\">Italian</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">J</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"ja\">Japanese</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">K</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"ko\">Korean</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">P</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"pl\">Polish</li>\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"pt\">Portuguese</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">R</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"ru\">Russian</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">S</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"es\">Spanish</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">T</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"tr\">Turkish</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">V</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"vi\">Vietnamese</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t</secton>\n\t\t<section class=\"input\">\n\t\t\t<div class=\"input__textarea-block\">\n\t\t\t\t<textarea class=\"input__textarea\" placeholder=\"\u0432\u0432\u0435\u0434\u0438 \u0442\u0435\u043A\u0441\u0442 \u0438 \u0432\u044B\u0434\u0435\u043B\u0438 \u0441\u043B\u043E\u0432\u0430, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u0442\u044B \u0445\u043E\u0447\u0435\u0448\u044C \u0432\u044B\u0443\u0447\u0438\u0442\u044C\" name=input-text\">".concat(properties.input, "</textarea>\n\t\t\t\t<button class=\"input__close-button close-button\">\n\t\t\t\t\t<img class=\"close-button close-button-line1\" src=\"/img/input/1.svg\" alt=\"line\">\n\t\t\t\t\t<img class=\"close-button close-button-line2\" src=\"/img/input/2.svg\" alt=\"line\">\n\t\t\t\t</button>\n\t\t\t</div>\n\t\t\t<div class=\"input__wrapped-area open\">").concat(properties.text, "</div>\n\t\t</section>\n\t\t<section class=\"output\">\n\t\t\t<div class=\"output__translated translated\">\n\t\t\t\t<div class=\"translated__area\">").concat(properties.pickedWords, "</div>\n\t\t\t\t<button class=\"translated__copy-button copy-button\">\n\t\t\t\t\t<img class=\"copy-button copy-button__img1\" src=\"/img/output/1.svg\" alt=\"copy\">\n\t\t\t\t\t<img class=\"copy-button copy-button__img2\" src=\"/img/output/2.svg\" alt=\"copy\">\n\t\t\t\t</button>\n\t\t\t</div>\n\t\t</section>\n\t\t<section class=\"add-dictionary\">\n\t\t\t<button class=\"add-dictionary__add-button list-save-button\">\n\t\t\t\t\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C\n\t\t\t</button>\n\t\t</section>\n\t\t</div>\n\t\t").concat(liValue, "\n\t\t");
-          console.log(e.target.closest('.list__item-subtitle'));
-        case 13:
+          li.innerHTML = "\n\t\t<div class=\"list__item-subtitle-add subtitle-title open\">\n\t\t<secton class=\"list-translate-title title \">\n\t\t\t<button class=\"title__close-button close-button\" style=\"font-weight: 800\">\n\u0425\n\t\t\t</button>\n\t\t\t<div class=\"title__language-buttons buttons\">\n\t\t\t\t<button class=\"buttons__button buttons__source-button\" data-language=\"en\">english</button>\n\t\t\t\t<button class=\"buttons__reverse-button\" style=\"font-weight: 600\">\n\trev.\n\t\t\t\t</button>\n\t\t\t\t<button class=\"buttons__button buttons__target-button\" data-language=\"ru\">russian</button>\n\t\t\t\t<button class=\"buttons__signout\">Sign out</button>\n\t\t\t</div>\n\t\t\t<div class=\"languages-list\">\n\t\t\t\t<ul class=\"languages-list__ul ul\">\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">A</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li ul__li-auto\" data-language=\"auto\">Auto Detect</li>\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"ar\">Arabic</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">C</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"zh\">Chinese</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">E</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"en\">English</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">F</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"fr\">French</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">G</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"de\">German</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">H</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"hi\">Hindi</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">I</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"id\">Indonesian</li>\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"ga\">Irish</li>\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"it\">Italian</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">J</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"ja\">Japanese</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">K</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"ko\">Korean</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">P</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"pl\">Polish</li>\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"pt\">Portuguese</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">R</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"ru\">Russian</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">S</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"es\">Spanish</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">T</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"tr\">Turkish</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t\t<div class=\"ul__title-letter\">V</div>\n\t\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"vi\">Vietnamese</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t</secton>\n\t\t<section class=\"input\">\n\t\t\t<div class=\"input__textarea-block\">\n\t\t\t\t<textarea class=\"input__textarea\" placeholder=\"\u0432\u0432\u0435\u0434\u0438 \u0442\u0435\u043A\u0441\u0442 \u0438 \u0432\u044B\u0434\u0435\u043B\u0438 \u0441\u043B\u043E\u0432\u0430, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u0442\u044B \u0445\u043E\u0447\u0435\u0448\u044C \u0432\u044B\u0443\u0447\u0438\u0442\u044C\" name=input-text\">".concat(properties.input, "</textarea>\n\t\t\t\t<button class=\"input__close-button close-button\" style=\"font-weight: 800\">\n\u0425\n\t\t\t\t</button>\n\t\t\t</div>\n\t\t\t<div class=\"input__wrapped-area open\">").concat(properties.text, "</div>\n\t\t</section>\n\t\t<section class=\"output\">\n\t\t\t<div class=\"output__translated translated\">\n\t\t\t\t<div class=\"translated__area\">").concat(properties.pickedWords, "</div>\n\t\t\t\t<button class=\"translated__copy-button copy-button\" style=\"font-weight: 800\">\n[-]\n\t\t\t\t</button>\n\t\t\t</div>\n\t\t</section>\n\t\t<section class=\"add-dictionary\">\n\t\t\t<button class=\"add-dictionary__add-button list-save-button\">\n\t\t\t\t\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C\n\t\t\t</button>\n\t\t</section>\n\t\t</div>\n\t\t").concat(liValue, "\n\t\t");
+        case 10:
         case "end":
           return _context2.stop();
       }
@@ -47275,6 +47223,12 @@ Object.defineProperty(exports, "collection", {
 });
 exports.createNewAccount = createNewAccount;
 exports.db = void 0;
+Object.defineProperty(exports, "deleteDoc", {
+  enumerable: true,
+  get: function () {
+    return _firestore.deleteDoc;
+  }
+});
 Object.defineProperty(exports, "doc", {
   enumerable: true,
   get: function () {
@@ -47364,11 +47318,7 @@ function googleAutentification(e) {
     var token = credential.accessToken;
     // The signed-in user info.
     var user = result.user;
-  })
-  //   .then(()=>{
-  // 	showTexts()
-  // })
-  .catch(function (error) {
+  }).catch(function (error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
@@ -47411,175 +47361,9 @@ function loginWithEmail(email, password) {
     alert(errorMessage);
   });
 }
-
-// exports-----------------------------------------------------------------------------
-// async function showTexts() {
-// 	const file = await doc(db, "USERS", 'users collections')
-// 	const col = await collection(file, `${auth.currentUser.email}`)
-// 	await onSnapshot(col, (snapshot)=>{
-// 		let texts = []
-// 		snapshot.docs.forEach((doc)=>{
-// 		texts.push({
-// 			...doc.data(),id: doc.id
-// 		})
-// 	})
-// 	const savedTextsList = document.querySelector('.saved-texts__list')
-// 	savedTextsList.innerHTML = ''
-// 	texts.forEach((elem)=>{
-// 		let ulValue = savedTextsList.innerHTML 
-// 		let rememberReds = elem.pickedWords
-// 		savedTextsList.innerHTML =  `${ulValue} <li class="list__item" data-num = ${elem.id}> <span class="list__item-title">${elem.title}</span>
-// 		<div class="list__item-subtitle-add subtitle-title">
-// <secton class="list-translate-title title ">
-// 	<button class="title__close-button close-button">
-// 		<img class="title__close-button close-button-line1" src="/img/input/1.svg" alt="line">
-// 		<img class="title__close-button close-button-line2" src="/img/input/2.svg" alt="line">
-// 	</button>
-// 	<div class="title__language-buttons buttons">
-// 		<button class="buttons__button buttons__source-button" data-language="en">english</button>
-// 		<button class="buttons__reverse-button">
-// 			<img class="buttons__reverse-button" src="img/header/2.svg" alt="strict">
-// 			<img class="buttons__reverse-button" src="img/header/3.svg" alt="strict">
-// 		</button>
-// 		<button class="buttons__button buttons__target-button" data-language="ru">russian</button>
-// 		<button class="buttons__signout">Sign out</button>
-// 	</div>
-// 	<div class="languages-list">
-// 		<ul class="languages-list__ul ul">
-// 			<li class="ul__languages-group">
-// 				<div class="ul__title-letter">A</div>
-// 				<ul class="ul__group-ul">
-// 					<li class="ul__li ul__li-auto" data-language="auto">Auto Detect</li>
-// 					<li class="ul__li" data-language="ar">Arabic</li>
-// 				</ul>
-// 			</li>
-// 			<li class="ul__languages-group">
-// 				<div class="ul__title-letter">C</div>
-// 				<ul class="ul__group-ul">
-// 					<li class="ul__li" data-language="zh">Chinese</li>
-// 				</ul>
-// 			</li>
-// 			<li class="ul__languages-group">
-// 				<div class="ul__title-letter">E</div>
-// 				<ul class="ul__group-ul">
-// 					<li class="ul__li" data-language="en">English</li>
-// 				</ul>
-// 			</li>
-// 			<li class="ul__languages-group">
-// 				<div class="ul__title-letter">F</div>
-// 				<ul class="ul__group-ul">
-// 					<li class="ul__li" data-language="fr">French</li>
-// 				</ul>
-// 			</li>
-// 			<li class="ul__languages-group">
-// 				<div class="ul__title-letter">G</div>
-// 				<ul class="ul__group-ul">
-// 					<li class="ul__li" data-language="de">German</li>
-// 				</ul>
-// 			</li>
-// 			<li class="ul__languages-group">
-// 				<div class="ul__title-letter">H</div>
-// 				<ul class="ul__group-ul">
-// 					<li class="ul__li" data-language="hi">Hindi</li>
-// 				</ul>
-// 			</li>
-// 			<li class="ul__languages-group">
-// 				<div class="ul__title-letter">I</div>
-// 				<ul class="ul__group-ul">
-// 					<li class="ul__li" data-language="id">Indonesian</li>
-// 					<li class="ul__li" data-language="ga">Irish</li>
-// 					<li class="ul__li" data-language="it">Italian</li>
-// 				</ul>
-// 			</li>
-// 			<li class="ul__languages-group">
-// 				<div class="ul__title-letter">J</div>
-// 				<ul class="ul__group-ul">
-// 					<li class="ul__li" data-language="ja">Japanese</li>
-// 				</ul>
-// 			</li>
-// 			<li class="ul__languages-group">
-// 				<div class="ul__title-letter">K</div>
-// 				<ul class="ul__group-ul">
-// 					<li class="ul__li" data-language="ko">Korean</li>
-// 				</ul>
-// 			</li>
-// 			<li class="ul__languages-group">
-// 				<div class="ul__title-letter">P</div>
-// 				<ul class="ul__group-ul">
-// 					<li class="ul__li" data-language="pl">Polish</li>
-// 					<li class="ul__li" data-language="pt">Portuguese</li>
-// 				</ul>
-// 			</li>
-// 			<li class="ul__languages-group">
-// 				<div class="ul__title-letter">R</div>
-// 				<ul class="ul__group-ul">
-// 					<li class="ul__li" data-language="ru">Russian</li>
-// 				</ul>
-// 			</li>
-// 			<li class="ul__languages-group">
-// 				<div class="ul__title-letter">S</div>
-// 				<ul class="ul__group-ul">
-// 					<li class="ul__li" data-language="es">Spanish</li>
-// 				</ul>
-// 			</li>
-// 			<li class="ul__languages-group">
-// 				<div class="ul__title-letter">T</div>
-// 				<ul class="ul__group-ul">
-// 					<li class="ul__li" data-language="tr">Turkish</li>
-// 				</ul>
-// 			</li>
-// 			<li class="ul__languages-group">
-// 				<div class="ul__title-letter">V</div>
-// 				<ul class="ul__group-ul">
-// 					<li class="ul__li" data-language="vi">Vietnamese</li>
-// 				</ul>
-// 			</li>
-// 		</ul>
-// 	</div>
-// </secton>
-// <section class="input">
-// 	<div class="input__textarea-block">
-// 		<textarea class="input__textarea" placeholder="введи текст и выдели слова, которые ты хочешь выучить" name=input-text">${elem.input}</textarea>
-// 		<button class="input__close-button close-button">
-// 			<img class="close-button close-button-line1" src="/img/input/1.svg" alt="line">
-// 			<img class="close-button close-button-line2" src="/img/input/2.svg" alt="line">
-// 		</button>
-// 	</div>
-// 	<div class="input__wrapped-area"></div>
-// </section>
-// <section class="output">
-// 	<div class="output__translated translated">
-// 		<div class="translated__area">${elem.text}</div>
-// 		<button class="translated__copy-button copy-button">
-// 			<img class="copy-button copy-button__img1" src="/img/output/1.svg" alt="copy">
-// 			<img class="copy-button copy-button__img2" src="/img/output/2.svg" alt="copy">
-// 		</button>
-// 	</div>
-// </section>
-// <section class="add-dictionary">
-// 	<button class="add-dictionary__add-button">
-// 		Сохранить
-// 	</button>
-// </section>
-// </div>
-// <div class="list__item-subtitle subtitle">
-// <div class="subtitle__text-block">
-// 	<div class="subtitle__title">Текст</div>
-// 	<div class="subtitle__text">${elem.text}</div>
-// </div>
-// <div class="subtitle__words-block">
-// 	<div class="subtitle__title">Словарь</div>
-// 	<div class="subtitle__words">${elem.pickedWords} </div>
-// </div>
-// <button class="subtitle__add-button">Ред.</button>
-// </div>
-// </li>
-// `
-// })
-// } )}
 function showTexts() {
   return _showTexts.apply(this, arguments);
-}
+} // exports-----------------------------------------------------------------------------
 function _showTexts() {
   _showTexts = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
     var file, col;
@@ -47608,7 +47392,7 @@ function _showTexts() {
               var ulValue = savedTextsList.innerHTML;
               var rememberReds = elem.pickedWords;
               var dataObject = JSON.stringify(elem);
-              savedTextsList.innerHTML = "".concat(ulValue, " <li class=\"list__item\" data-id='").concat(elem.id, "' data-object='").concat(dataObject, "'> <span class=\"list__item-title\">").concat(elem.title, "</span>\n\t\t<div class=\"list__container\">\n<div class=\"list__item-subtitle subtitle\">\n<div class=\"subtitle__text-block\">\n\t<div class=\"subtitle__title\">\u0422\u0435\u043A\u0441\u0442</div>\n\t<div class=\"subtitle__text\">").concat(elem.text, "</div>\n</div>\n<div class=\"subtitle__words-block\">\n\t<div class=\"subtitle__title\">\u0421\u043B\u043E\u0432\u0430\u0440\u044C</div>\n\t<div class=\"subtitle__words\">").concat(elem.pickedWords, " </div>\n</div>\n<button class=\"subtitle__add-button\">\u0420\u0435\u0434.</button>\n</div>\n</div>\n</li>\n");
+              savedTextsList.innerHTML = "".concat(ulValue, " <li class=\"list__item\" data-id='").concat(elem.id, "' data-object='").concat(dataObject, "'> <span class=\"list__item-title\">").concat(elem.title, " <button class=\"list__item-title-delete\">delete</button> </span></button></span>\n\t\t<div class=\"list__container\">\n<div class=\"list__item-subtitle subtitle\">\n<div class=\"subtitle__text-block\">\n\t<div class=\"subtitle__title\">\u0422\u0435\u043A\u0441\u0442</div>\n\t<div class=\"subtitle__text\">").concat(elem.text, "</div>\n</div>\n<div class=\"subtitle__words-block\">\n\t<div class=\"subtitle__title\">\u0421\u043B\u043E\u0432\u0430\u0440\u044C</div>\n\t<div class=\"subtitle__words\">").concat(elem.pickedWords, " </div>\n</div>\n<button class=\"subtitle__add-button\">\u0420\u0435\u0434.</button>\n</div>\n</div>\n</li>\n");
             });
           });
         case 8:
@@ -47628,10 +47412,19 @@ Object.defineProperty(exports, "__esModule", {
 exports.authPopup = void 0;
 exports.closePopup = closePopup;
 exports.openPopup = openPopup;
-var _variables = require("./variables");
 var _fbconfig = require("./fbconfig");
 var _functions = require("./functions");
-var _input = require("./input");
+// import {
+// 	savedButton,languagePickButtonsWrapper, signOutButton,inputField,
+// 	outputField,addToDictionaryButton,contactsFooter,  
+// 	authPopupCloseButton, sourceLanguageButton, targetLanguageButton,
+// 	languagesList,autoDetectLanguageOption, reverseLanguagesButon,
+// } from './variables'
+
+// import {
+// 	wrappedInputField
+// 	} from './input'
+
 var allPopups = document.querySelectorAll('.popup');
 var popupsWrapper = document.querySelector('.popups');
 var authPopup = document.querySelector('.auth-popup');
@@ -47648,13 +47441,17 @@ var SaveTextButton = document.querySelector('.save-text-popup__save-button');
 // const saveTextPopupCloseButton = saveTextPopup.querySelector('.close-button')
 
 // add too dictionary or open auth
-_variables.addToDictionaryButton.addEventListener('click', function (e) {
-  if (!_fbconfig.auth.currentUser) {
-    openPopup(authPopup);
-  } else {
-    openPopup(saveTextPopup);
+document.addEventListener('click', function (e) {
+  if (e.target.classList.contains('add-dictionary__add-button')) {
+    if (!_fbconfig.auth.currentUser) {
+      openPopup(authPopup);
+    } else {
+      openPopup(saveTextPopup);
+    }
   }
 });
+
+// addToDictionaryButton
 function openPopup(popup) {
   if (document.querySelector('.popups')) {
     closePopup();
@@ -47723,27 +47520,12 @@ document.addEventListener('click', function (e) {
 // save text
 document.addEventListener('click', function (e) {
   if (e.target.classList.contains('save-text-popup__save-button')) {
-    var file = (0, _fbconfig.doc)(_fbconfig.db, "USERS", 'users collections');
-    var title = document.querySelector('.save-text-popup__input').value;
-    (0, _functions.addToCol)(file, title);
+    (0, _functions.addToCol)();
     closePopup();
     (0, _functions.clearAny)(e);
   }
 });
-
-// function closePopup (e) {
-// 	if(e.target.classList.contains('popups') || e.target.classList.contains('close-button') || e.target.classList.contains('form__submit') || e.target.classList.contains('form__google-in'))  {
-// 		let popups = e.target.closest('.popups').querySelectorAll('.popup')
-// 		popups.forEach((elem)=>{
-// 			if(elem.classList.contains('open')) {
-// 				elem.classList.remove('open')
-// 			}
-// 		})
-// 		popupsWrapper.classList.remove('open')
-// 	}
-
-// }
-},{"./variables":"scripts/variables.js","./fbconfig":"scripts/fbconfig.js","./functions":"scripts/functions.js","./input":"scripts/input.js"}],"scripts/title.js":[function(require,module,exports) {
+},{"./fbconfig":"scripts/fbconfig.js","./functions":"scripts/functions.js"}],"scripts/title.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -47761,13 +47543,13 @@ var _fbconfig = require("./fbconfig");
 var _popups = require("./popups");
 var savedButton = document.querySelector('.header__icon');
 var languagePickButtonsWrapper = document.querySelector('.title__language-buttons');
-var sourceLanguageButton = languagePickButtonsWrapper.querySelector('.buttons__source-button');
+var sourceLanguageButton = document.querySelector('.buttons__source-button');
 exports.sourceLanguageButton = sourceLanguageButton;
-var targetLanguageButton = languagePickButtonsWrapper.querySelector('.buttons__target-button');
+var targetLanguageButton = document.querySelector('.buttons__target-button');
 exports.targetLanguageButton = targetLanguageButton;
-var reverseLanguagesButon = languagePickButtonsWrapper.querySelector('.buttons__reverse-button');
+var reverseLanguagesButon = document.querySelector('.buttons__reverse-button');
 var languagesList = document.querySelector('.languages-list');
-var autoDetectLanguageOption = languagesList.querySelector('.ul__li-auto');
+var autoDetectLanguageOption = document.querySelector('.ul__li-auto');
 var signOutButton = document.querySelector('.buttons__signout');
 
 //constantly checking if user logged in 
@@ -47779,51 +47561,16 @@ var signOutButton = document.querySelector('.buttons__signout');
   }
 });
 
-// // open language- list
-// languagePickButtonsWrapper.addEventListener('click', (e)=> {
-// 	const target = e.target
-// 		deployLanguagesList(target)
-// })
-
 // open language- list
 document.addEventListener('click', function (e) {
   var target = e.target;
   deployLanguagesList(target);
 });
 
-// // pick language
-// languagesList.addEventListener('click', (e)=>{
-// 	const target = e.target
-// 	pickLanguage(target)
-// }
-// )
-
-// pick language
-// languagesList.addEventListener('click', (e)=>{
-// 	const target = e.target
-// 	pickLanguage(target)
-// }
-// )
-
-// // reverse languages(source and target)
-// reverseLanguagesButon.addEventListener('click', ()=>{
-// 	reverseLanguages ()
-// })
-
 // reverse languages(source and target)
 document.addEventListener('click', function (e) {
   reverseLanguages(e, document.querySelector('.buttons__source-button'), document.querySelector('.buttons__target-button'));
 });
-
-// // pick language from deployed list
-// languagesList.addEventListener('click', (e)=>{
-// 	const target = e.target
-// 	if(target.classList.contains('ul__li')) {
-// 		chooseLanguage(target)
-// 		languagesList.classList.remove('open')
-// 		removeDeployTagsFromTitleLanguageButtons()
-// 	}
-// })
 
 // pick language from deployed list
 document.addEventListener('click', function (e) {
@@ -47850,9 +47597,6 @@ signOutButton.addEventListener('click', function () {
 });
 function deployLanguagesList(target) {
   var body = target.closest('body');
-  // if(target.classList.contains('buttons__source-button') || target.classList.contains('buttons__target-button')){
-  // 	tagDeployedLanguageList (target, body)
-  // }
   if (target.classList.contains('buttons__source-button')) {
     tagDeployedLanguageList(target, body);
     body.querySelector('.ul__li-auto').classList.remove('hidden');
@@ -47863,31 +47607,6 @@ function deployLanguagesList(target) {
     languageListShowToggle(body);
   }
 }
-
-// function deployLanguagesList (target) {
-// 	if(target == sourceLanguageButton || target == targetLanguageButton){
-// 		tagDeployedLanguageList(target,sourceLanguageButton, targetLanguageButton)
-// 	}
-// 	if(target == sourceLanguageButton) {
-// 		autoDetectLanguageOption.classList.remove('hidden')
-// 		languageListShowToggle ()
-// 	}
-// 	else if(target == targetLanguageButton) {
-// 		autoDetectLanguageOption.classList.add('hidden')
-// 		languageListShowToggle ()
-// 	}
-// }
-
-// function tagDeployedLanguageList (target) {
-// 	const sourceLanguageButton = document.querySelector('.buttons__source-button')
-// 	const targetLanguageButton = document.querySelector('.buttons__target-button')
-// 	if(languagesList.classList.contains('open')){
-// 		removeDeployTagsFromTitleLanguageButtons ()
-// 	}
-// 	else {
-// 		target.classList.add('deployed')
-// 	}
-// }
 function tagDeployedLanguageList(target, body) {
   if (body.querySelector('.languages-list').classList.contains('open')) {
     sourceLanguageButton.classList.remove('deployed');
@@ -47897,12 +47616,6 @@ function tagDeployedLanguageList(target, body) {
     target.classList.add('deployed');
   }
 }
-
-// function removeDeployTagsFromTitleLanguageButtons (sourceLanguageButton, targetLanguageButton) {
-// 	sourceLanguageButton.classList.remove('deployed')
-// 	targetLanguageButton.classList.remove('deployed')
-// }
-
 function removeDeployTagsFromTitleLanguageButtons() {
   var sourceLanguageButton = document.querySelector('.buttons__source-button');
   var targetLanguageButton = document.querySelector('.buttons__target-button');
@@ -47925,25 +47638,9 @@ function reverseLanguages(e, sourceLanguageButton, targetLanguageButton) {
     targetLanguageButton.dataset.language = sourceLang.dataset;
   }
 }
-
-// function languageListShowToggle () {
-// 	languagesList.classList.toggle('open')
-// }
-
 function languageListShowToggle(body) {
   document.querySelector('.languages-list').classList.toggle('open');
 }
-
-// function chooseLanguage (target) {
-// 	const targetProperties = {
-// 		languageName: target.textContent,
-// 		languageCode: target.dataset.language
-// 	}
-// 	const depoyedLanguageButton = languagePickButtonsWrapper.querySelector('.deployed')
-// 	depoyedLanguageButton.textContent = targetProperties.languageName
-// 	depoyedLanguageButton.dataset.language = targetProperties.languageCode
-// }
-
 function chooseLanguage(target) {
   var targetProperties = {
     languageName: target.textContent,
@@ -47953,12 +47650,6 @@ function chooseLanguage(target) {
   depoyedLanguageButton.textContent = targetProperties.languageName;
   depoyedLanguageButton.dataset.language = targetProperties.languageCode;
 }
-
-// function pickLanguage(target) {
-// 	const languageName = target.textContent
-// 	const languageCode = target.dataset.language
-// }
-
 function showSignoutButton(e) {
   if (signOutButton.closest('body').dataset.type == 'title-page') {
     signOutButton.classList.add('open');
@@ -47988,10 +47679,15 @@ var homebutton = document.querySelector('.home-button');
 var addButton = document.querySelector('.subtitle__add-button');
 var savedTextsList = document.querySelector('.saved-texts__list');
 var contacts = document.querySelector('.contacts');
-contacts.addEventListener('click', function () {
-  (0, _fbconfig.showTexts)();
-});
-// const translationField = document.querySelector('.subtitle__add-button')
+setTimeout(function () {
+  if (_fbconfig.auth.currentUser) {
+    (0, _fbconfig.showTexts)();
+  } else {
+    setTimeout(function () {
+      (0, _fbconfig.showTexts)();
+    }, 3000);
+  }
+}, 1000);
 
 // back to main page
 backButton.addEventListener('click', function () {
@@ -48011,29 +47707,45 @@ savedTextsList.addEventListener('click', function (e) {
   deployText(e);
 });
 
-// save new text
+// delete doc
 document.addEventListener('click', /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(e) {
-    var docName, file, input, text, coloredWords, data;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
+          if (!e.target.classList.contains('list__item-title-delete')) {
+            _context.next = 3;
+            break;
+          }
+          _context.next = 3;
+          return (0, _fbconfig.deleteDoc)((0, _fbconfig.doc)(_fbconfig.db, "USERS", 'users collections', "".concat(_fbconfig.auth.currentUser.email), "".concat(e.target.closest('.list__item').dataset.id)));
+        case 3:
+        case "end":
+          return _context.stop();
+      }
+    }, _callee);
+  }));
+  return function (_x) {
+    return _ref.apply(this, arguments);
+  };
+}());
+
+// save new text
+document.addEventListener('click', /*#__PURE__*/function () {
+  var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(e) {
+    var docName, file, input, text, coloredWords, data;
+    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+      while (1) switch (_context2.prev = _context2.next) {
+        case 0:
           if (!e.target.classList.contains('list-save-button')) {
-            _context.next = 11;
+            _context2.next = 10;
             break;
           }
           docName = e.target.closest('.list__item').dataset.id;
-          console.log(docName);
-          _context.next = 5;
+          _context2.next = 4;
           return (0, _fbconfig.doc)(_fbconfig.db, "USERS", 'users collections', "".concat(_fbconfig.auth.currentUser.email), "".concat(docName));
-        case 5:
-          file = _context.sent;
-          // const properties = await JSON.parse(e.target.closest('.list__item').dataset.object)
-          // const title = properties.title
-          // console.log(title)
-          // console.log(file)
-          // addToCol(file, title)
-          // console.log(rememberReds)
+        case 4:
+          file = _context2.sent;
           input = document.querySelector('.input__textarea');
           text = document.querySelector('.input__wrapped-area').innerHTML;
           coloredWords = document.querySelector('.translated__area').innerHTML;
@@ -48044,14 +47756,14 @@ document.addEventListener('click', /*#__PURE__*/function () {
             pickedWordsArray: _functions.rememberReds
           };
           (0, _fbconfig.updateDoc)(file, data);
-        case 11:
+        case 10:
         case "end":
-          return _context.stop();
+          return _context2.stop();
       }
-    }, _callee);
+    }, _callee2);
   }));
-  return function (_x) {
-    return _ref.apply(this, arguments);
+  return function (_x2) {
+    return _ref2.apply(this, arguments);
   };
 }());
 savedTextsList.addEventListener('click', function (e) {
@@ -48079,6 +47791,11 @@ function deployText(e) {
     // }
     // else {
     // closeTranslation(e)
+    document.querySelectorAll('.list__item-subtitle').forEach(function (elem) {
+      if (elem != e.target.closest('.list__item').querySelector('.list__item-subtitle')) {
+        elem.classList.remove('open');
+      }
+    });
     e.target.closest('.list__item').querySelector('.list__item-subtitle').classList.toggle('open');
   }
 }
@@ -48109,8 +47826,6 @@ document.addEventListener('click', function (e) {
   }
   // openTranslation(e)
 });
-
-var x = "<li class=\"list__item\"> <span class=\"list__item-title\">\u0432\u0432\u041E\u0442\u0440\u044B\u0432\u043E\u043A 167i  \u0443\u043A  \u0443\u043A \u0438\u0437 \u0413\u0430\u0440\u0440\u0438bvb v bbbbb \u041F\u043E\u0442\u0442\u0435\u0440\u0430</span>\n\t\t\t<div class=\"list__item-subtitle-add subtitle-title\">\n\n\n\t<secton class=\"list-translate-title title \">\n\t\t<button class=\"title__close-button close-button\">\n\t\t\t<img class=\"title__close-button close-button-line1\" src=\"/img/input/1.svg\" alt=\"line\">\n\t\t\t<img class=\"title__close-button close-button-line2\" src=\"/img/input/2.svg\" alt=\"line\">\n\t\t</button>\n\t\t<div class=\"title__language-buttons buttons\">\n\t\t\t<button class=\"buttons__button buttons__source-button\" data-language=\"en\">english</button>\n\t\t\t<button class=\"buttons__reverse-button\">\n\t\t\t\t<img class=\"buttons__reverse-button\" src=\"img/header/2.svg\" alt=\"strict\">\n\t\t\t\t<img class=\"buttons__reverse-button\" src=\"img/header/3.svg\" alt=\"strict\">\n\t\t\t</button>\n\t\t\t<button class=\"buttons__button buttons__target-button\" data-language=\"ru\">russian</button>\n\t\t\t<button class=\"buttons__signout\">Sign out</button>\n\t\t</div>\n\t\t<div class=\"languages-list\">\n\t\t\t<ul class=\"languages-list__ul ul\">\n\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t<div class=\"ul__title-letter\">A</div>\n\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t<li class=\"ul__li ul__li-auto\" data-language=\"auto\">Auto Detect</li>\n\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"ar\">Arabic</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</li>\n\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t<div class=\"ul__title-letter\">C</div>\n\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"zh\">Chinese</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</li>\n\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t<div class=\"ul__title-letter\">E</div>\n\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"en\">English</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</li>\n\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t<div class=\"ul__title-letter\">F</div>\n\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"fr\">French</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</li>\n\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t<div class=\"ul__title-letter\">G</div>\n\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"de\">German</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</li>\n\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t<div class=\"ul__title-letter\">H</div>\n\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"hi\">Hindi</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</li>\n\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t<div class=\"ul__title-letter\">I</div>\n\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"id\">Indonesian</li>\n\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"ga\">Irish</li>\n\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"it\">Italian</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</li>\n\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t<div class=\"ul__title-letter\">J</div>\n\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"ja\">Japanese</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</li>\n\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t<div class=\"ul__title-letter\">K</div>\n\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"ko\">Korean</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</li>\n\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t<div class=\"ul__title-letter\">P</div>\n\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"pl\">Polish</li>\n\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"pt\">Portuguese</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</li>\n\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t<div class=\"ul__title-letter\">R</div>\n\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"ru\">Russian</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</li>\n\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t<div class=\"ul__title-letter\">S</div>\n\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"es\">Spanish</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</li>\n\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t<div class=\"ul__title-letter\">T</div>\n\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"tr\">Turkish</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</li>\n\t\t\t\t<li class=\"ul__languages-group\">\n\t\t\t\t\t<div class=\"ul__title-letter\">V</div>\n\t\t\t\t\t<ul class=\"ul__group-ul\">\n\t\t\t\t\t\t<li class=\"ul__li\" data-language=\"vi\">Vietnamese</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</li>\n\t\t\t</ul>\n\t\t</div>\n\t</secton>\n\t<section class=\"input\">\n\t\t<div class=\"input__textarea-block\">\n\t\t\t<textarea class=\"input__textarea\" placeholder=\"\u0432\u0432\u0435\u0434\u0438 \u0442\u0435\u043A\u0441\u0442 \u0438 \u0432\u044B\u0434\u0435\u043B\u0438 \u0441\u043B\u043E\u0432\u0430, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u0442\u044B \u0445\u043E\u0447\u0435\u0448\u044C \u0432\u044B\u0443\u0447\u0438\u0442\u044C\" name=input-text\"></textarea>\n\t\t\t<button class=\"input__close-button close-button\">\n\t\t\t\t<img class=\"close-button close-button-line1\" src=\"/img/input/1.svg\" alt=\"line\">\n\t\t\t\t<img class=\"close-button close-button-line2\" src=\"/img/input/2.svg\" alt=\"line\">\n\t\t\t</button>\n\t\t</div>\n\t\t<div class=\"input__wrapped-area\"></div>\n\t</section>\n\t<section class=\"output\">\n\t\t<div class=\"output__translated translated\">\n\t\t\t<div class=\"translated__area\">\u0421\u043F\u0438\u0441\u043E\u043A \u0441\u043B\u043E\u0432, <br/> \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u0442\u044B \u0445\u043E\u0447\u0435\u0448\u044C <br/> \u0432\u044B\u0443\u0447\u0438\u0442\u044C,  \u0441 <br/> \u043F\u0435\u0440\u0435\u0432\u043E\u0434\u043E\u043C</div>\n\t\t\t<button class=\"translated__copy-button copy-button\">\n\t\t\t\t<img class=\"copy-button copy-button__img1\" src=\"/img/output/1.svg\" alt=\"copy\">\n\t\t\t\t<img class=\"copy-button copy-button__img2\" src=\"/img/output/2.svg\" alt=\"copy\">\n\t\t\t</button>\n\t\t</div>\n\t</section>\n\t<section class=\"add-dictionary\">\n\t\t<button class=\"add-dictionary__add-button list-save-button\">\n\t\t\t\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C\n\t\t</button>\n\t</section>\n\n\n\n</div>\n<div class=\"list__item-subtitle subtitle\">\n\t<div class=\"subtitle__text-block\">\n\t\t<div class=\"subtitle__title\">\u0422\u0435\u043A\u0441\u0442</div>\n\t\t<div class=\"subtitle__text\">gdfgd</div>\n\t</div>\n\t<div class=\"subtitle__words-block\">\n\t\t<div class=\"subtitle__title\">\u0421\u043B\u043E\u0432\u0430\u0440\u044C</div>\n\t\t<div class=\"subtitle__words\">fdgd </div>\n\t</div>\n\t<button class=\"subtitle__add-button\">\u0420\u0435\u0434.</button>\n</div>\n</li>\n";
 },{"./scripts/title":"scripts/title.js","./scripts/fbconfig":"scripts/fbconfig.js","./scripts/functions":"scripts/functions.js"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -48136,7 +47851,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54353" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63727" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

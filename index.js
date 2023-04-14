@@ -21,7 +21,7 @@ import { wrappedInputField } from './scripts/input'
 
 	import {
 		addToCol }
-	from './scripts/list'
+	from './scripts/empty'
 	
 
 	import {
@@ -43,12 +43,7 @@ import { wrappedInputField } from './scripts/input'
 
 // copy words
 
-document.addEventListener('click', (e)=> {
-	// if(e.target.classList.contains('copy-button')) {
-		copyToClipboard(e, outputField)
-		// listForSave = ''
-	// }
-})
+
 
 
 

@@ -720,6 +720,21 @@ cursor: pointer;
 	background: #FBA3C3;
 	display: block;
 	width: 100%;
+	position: relative;
+}
+.list__item-title-delete {
+position: absolute;
+right: 20px;
+top: 15px;
+font-size: 14px;
+text-transform: lowercase;
+padding: 5px;
+border: 1px solid;
+border-radius: 5px;
+background-color: #2A8CC3;
+}
+.list__item-title-delete:hover {
+	background-color: #8aafc5;
 }
 
 .list__item-title:hover {

@@ -1,10 +1,10 @@
 import { rememberReds, removeWords, clearAny } from "./functions"
-import {outputField, outputSection } from './output'
-import { sourceLanguageButton, targetLanguageButton } from './title'
+// import {outputField, outputSection } from './output'
+// import { sourceLanguageButton, targetLanguageButton } from './title'
 
-const inputBlock = document.querySelector('.input')
-const inputField = document.querySelector('.input__textarea')
-const wrappedInputField = document.querySelector('.input__wrapped-area')
+// const inputBlock = document.querySelector('.input')
+// const inputField = document.querySelector('.input__textarea')
+// const wrappedInputField = document.querySelector('.input__wrapped-area')
 
 
 // make wrapped words block from input value
@@ -24,20 +24,6 @@ document.addEventListener('input', (e)=>{
 	
 })
 
-// inputField.addEventListener('input', (e)=>{
-// 	if(inputField.value == '') {
-// 		clearAny(e)
-// 		}
-// 	else {
-// 		wrappedInputField.classList.add('open')
-// 		makeArrayFromInputValue()
-// 		keepSingled()
-// 		checkIfWordsFromColoredArrayYetExist()
-// 	}
-// })
-
-
-
 // delete input
 document.addEventListener('click', (e)=>{
 if (e.target.classList.contains('close-button') && e.target.closest('.input__textarea-block')) {
@@ -49,21 +35,9 @@ if (e.target.classList.contains('close-button') && e.target.closest('.input__tex
 document.addEventListener('click', (e)=>{
 	if(e.target.classList.contains('word') && e.target.closest('.input__wrapped-area')) {
 		singleOut(e)
-		makePickedList(wrappedInputField)
+		makePickedList(document.querySelector('.input__wrapped-area'))
 	}
 })
-// wrappedInputField.addEventListener('click', (e)=>{
-// 	singleOut(e)
-// 	makePickedList(wrappedInputField)
-// })
-
-// function makeArrayFromInputValue () {
-// 	const inputValue = inputField.value
-// 	const inputWordsArray = inputValue.split(' ')
-// 	const additionalTag = ''
-// 	wrapWords(inputWordsArray, wrappedInputField, additionalTag)
-// 	makeSpacesInText(wrappedInputField)
-// }
 
 function makeArrayFromInputValue () {
 	const inputValue = document.querySelector('.input__textarea').value
@@ -93,7 +67,7 @@ function checkIfWordsFromColoredArrayYetExist() {
 		rememberReds.forEach((elem)=>{
 			if (!cleanedWords.includes(elem.word)) {
 				removeWords(rememberReds, elem.word)
-				makePickedList(wrappedInputField)
+				makePickedList(document.querySelector('.input__wrapped-area'))
 			}
 		})
 }
@@ -152,7 +126,6 @@ function singleOut (e) {
 	}
 }
 
-
 let translation = ''
 async function makeTranstlation(field, array) {
 	let words = ''
@@ -163,12 +136,10 @@ async function makeTranstlation(field, array) {
 			elem.translation = translation
 			words += `<span class="word"> ${elem.word} -|- ${elem.translation}</span> </br>`
 			field.innerHTML = words
-			// console.log(array)
 		}
 		else {
 			words += `<span class="word"> ${elem.word} -|- ${elem.translation}</span> </br>`
 			field.innerHTML = words
-			// console.log(array)
 		}
 	}
 }
@@ -190,4 +161,4 @@ async function translateRequest (word, sourceLang, targetLang) {
 		// Hello%20World!
 }
 
-export { inputField, wrappedInputField }
+// export { inputField, wrappedInputField }

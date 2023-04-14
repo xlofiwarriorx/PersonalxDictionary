@@ -25,11 +25,12 @@ let rememberReds = []
 
 // functions
 
-const addToCol = (file, title)=>{
+const addToCol = ()=>{
+	const file = doc(db, "USERS", 'users collections')
+	const title = document.querySelector('.save-text-popup__input').value
 	const input = document.querySelector('.input__textarea')
 	const text = document.querySelector('.input__wrapped-area').innerHTML
 	const coloredWords = document.querySelector('.translated__area').innerHTML
-	
 	const col = collection(file, `${auth.currentUser.email}`)
 	addDoc(col, {
 		input: input.value,
@@ -51,14 +52,7 @@ function clearAny(e) {
 	rememberReds = []
 	document.querySelector('.translated__area').innerHTML = `Список слов, <br/> которые ты хочешь <br/> выучить,  с <br/> переводом`
 	document.querySelector('.input__wrapped-area').classList.remove('open')
-	// inputField.value = ''
-	// wrappedInputField.innerHTML = ''
-	// saveTextInput.value = ''
-	// rememberReds = []
-	// outputField.innerHTML = `Список слов, <br/> которые ты хочешь <br/> выучить,  с <br/> переводом`
-	// wrappedInputField.classList.remove('open')
 }
-
 
 async function copyToClipboard(e, field) {
 	if(e.target.classList.contains('copy-button')) {
@@ -85,30 +79,22 @@ function removeWords(array, target) {
 	array.length = j; // обновляем размер массива
 }
 
-// exports
-export { copyToClipboard, rememberReds, clearAny, removeWords, addToCol, deployTranslate }
-
-
 async function deployTranslate (e) {
 	if (e.target.classList.contains('subtitle__add-button')) {
 		const li = e.target.closest('.list__item').querySelector('.list__container')
 		const properties = await JSON.parse(e.target.closest('.list__item').dataset.object)
-		console.log(properties)
 		rememberReds = await properties.pickedWordsArray
-		console.log(rememberReds)
 		let liValue = li.innerHTML
 		li.innerHTML = `
 		<div class="list__item-subtitle-add subtitle-title open">
 		<secton class="list-translate-title title ">
-			<button class="title__close-button close-button">
-				<img class="title__close-button close-button-line1" src="/img/input/1.svg" alt="line">
-				<img class="title__close-button close-button-line2" src="/img/input/2.svg" alt="line">
+			<button class="title__close-button close-button" style="font-weight: 800">
+Х
 			</button>
 			<div class="title__language-buttons buttons">
 				<button class="buttons__button buttons__source-button" data-language="en">english</button>
-				<button class="buttons__reverse-button">
-					<img class="buttons__reverse-button" src="img/header/2.svg" alt="strict">
-					<img class="buttons__reverse-button" src="img/header/3.svg" alt="strict">
+				<button class="buttons__reverse-button" style="font-weight: 600">
+	rev.
 				</button>
 				<button class="buttons__button buttons__target-button" data-language="ru">russian</button>
 				<button class="buttons__signout">Sign out</button>
@@ -209,9 +195,8 @@ async function deployTranslate (e) {
 		<section class="input">
 			<div class="input__textarea-block">
 				<textarea class="input__textarea" placeholder="введи текст и выдели слова, которые ты хочешь выучить" name=input-text">${properties.input}</textarea>
-				<button class="input__close-button close-button">
-					<img class="close-button close-button-line1" src="/img/input/1.svg" alt="line">
-					<img class="close-button close-button-line2" src="/img/input/2.svg" alt="line">
+				<button class="input__close-button close-button" style="font-weight: 800">
+Х
 				</button>
 			</div>
 			<div class="input__wrapped-area open">${properties.text}</div>
@@ -219,9 +204,8 @@ async function deployTranslate (e) {
 		<section class="output">
 			<div class="output__translated translated">
 				<div class="translated__area">${properties.pickedWords}</div>
-				<button class="translated__copy-button copy-button">
-					<img class="copy-button copy-button__img1" src="/img/output/1.svg" alt="copy">
-					<img class="copy-button copy-button__img2" src="/img/output/2.svg" alt="copy">
+				<button class="translated__copy-button copy-button" style="font-weight: 800">
+[-]
 				</button>
 			</div>
 		</section>
@@ -233,7 +217,9 @@ async function deployTranslate (e) {
 		</div>
 		${liValue}
 		`
-		console.log(e.target.closest('.list__item-subtitle'))
+		
 		
 	}
 }
+// exports
+export { copyToClipboard, rememberReds, clearAny, removeWords, addToCol, deployTranslate }

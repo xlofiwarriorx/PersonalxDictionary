@@ -1,10 +1,10 @@
 
-import {
-	savedButton,languagePickButtonsWrapper, signOutButton,inputField,
-	outputField,addToDictionaryButton,contactsFooter,  
-	authPopupCloseButton, sourceLanguageButton, targetLanguageButton,
-	languagesList,autoDetectLanguageOption, reverseLanguagesButon,
-} from './variables'
+// import {
+// 	savedButton,languagePickButtonsWrapper, signOutButton,inputField,
+// 	outputField,addToDictionaryButton,contactsFooter,  
+// 	authPopupCloseButton, sourceLanguageButton, targetLanguageButton,
+// 	languagesList,autoDetectLanguageOption, reverseLanguagesButon,
+// } from './variables'
 
 import {
 auth, googleAutentification, createNewAccount, loginWithEmail, doc, db
@@ -15,9 +15,9 @@ import {
 	} from './functions'
 	
 
-import {
-	wrappedInputField
-	} from './input'
+// import {
+// 	wrappedInputField
+// 	} from './input'
 
 	const allPopups = document.querySelectorAll('.popup')
 	const popupsWrapper = document.querySelector('.popups')
@@ -34,15 +34,18 @@ import {
 	// const saveTextPopupCloseButton = saveTextPopup.querySelector('.close-button')
 
 // add too dictionary or open auth
-addToDictionaryButton.addEventListener('click', (e)=> {
-	if(!auth.currentUser){
-		openPopup(authPopup)
+document.addEventListener('click', (e)=> {
+	if(e.target.classList.contains('add-dictionary__add-button')){
+		if(!auth.currentUser){
+			openPopup(authPopup)
+		}
+		else {
+			openPopup(saveTextPopup)
+		}
 	}
-	else {
-		openPopup(saveTextPopup)
-	}
-})
+	})
 
+// addToDictionaryButton
 function openPopup(popup) {
 if(document.querySelector('.popups')) {
 	closePopup()
@@ -116,26 +119,12 @@ document.addEventListener('click', (e) => {
 // save text
 document.addEventListener('click', (e)=>{
 	if(e.target.classList.contains('save-text-popup__save-button')) {
-		const file = doc(db, "USERS", 'users collections')
-		const title = document.querySelector('.save-text-popup__input').value
-		addToCol(file, title)
+		addToCol()
 		closePopup()
 		clearAny(e)
 	}
 	
 })
 
-// function closePopup (e) {
-// 	if(e.target.classList.contains('popups') || e.target.classList.contains('close-button') || e.target.classList.contains('form__submit') || e.target.classList.contains('form__google-in'))  {
-// 		let popups = e.target.closest('.popups').querySelectorAll('.popup')
-// 		popups.forEach((elem)=>{
-// 			if(elem.classList.contains('open')) {
-// 				elem.classList.remove('open')
-// 			}
-// 		})
-// 		popupsWrapper.classList.remove('open')
-// 	}
-	
-// }
 
 export { openPopup, closePopup, authPopup}
