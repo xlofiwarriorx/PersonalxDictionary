@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="/style.e308ff8e.css">
 	<title>Document</title>
 <script src="/style.e308ff8e.js"></script></head>
-<body>
+<body data-type="title-page">
 	<div class="wrapper">
 		<main class="main">
 			<secton class="title">
@@ -21,8 +21,8 @@
 				<div class="title__language-buttons buttons">
 					<button class="buttons__button buttons__source-button" data-language="en">english</button>
 					<button class="buttons__reverse-button">
-						<img src="/2.d45aea5b.svg" alt="strict">
-						<img src="/3.227902b1.svg" alt="strict">
+						<img class="buttons__reverse-button" src="/2.d45aea5b.svg" alt="strict">
+						<img class="buttons__reverse-button" src="/3.227902b1.svg" alt="strict">
 					</button>
 					<button class="buttons__button buttons__target-button" data-language="ru">russian</button>
 					<button class="buttons__signout">Sign out</button>
@@ -124,8 +124,8 @@
 				<div class="input__textarea-block">
 					<textarea class="input__textarea" placeholder="введи текст и выдели слова, которые ты хочешь выучить" name="input-text&quot;"></textarea>
 					<button class="input__close-button close-button">
-						<img class="close-button__button close-button-line1" src="/1.ca68ada5.svg" alt="line">
-						<img class="close-button__button close-button-line2" src="/2.0f450da1.svg" alt="line">
+						<img class="close-button close-button-line1" src="/1.ca68ada5.svg" alt="line">
+						<img class="close-button close-button-line2" src="/2.0f450da1.svg" alt="line">
 					</button>
 				</div>
 				<div class="input__wrapped-area"></div>
@@ -133,10 +133,9 @@
 			<section class="output">
 				<div class="output__translated translated">
 					<div class="translated__area">Список слов, <br> которые ты хочешь <br> выучить,  с <br> переводом</div>
-					<!-- <textarea class="translated__area" placeholder="Список слов, которые ты хочешь выучить, с переводом" ></textarea> -->
 					<button class="translated__copy-button copy-button">
-						<img class="copy-button__img1" src="/1.8e96e840.svg" alt="copy">
-						<img class="copy-button__img2" src="/2.f2a1a74b.svg" alt="copy">
+						<img class="copy-button copy-button__img1" src="/1.8e96e840.svg" alt="copy">
+						<img class="copy-button copy-button__img2" src="/2.f2a1a74b.svg" alt="copy">
 					</button>
 				</div>
 			</section>
@@ -197,8 +196,8 @@
 		</div>
 		<div class="save-text-popup popup">
 			<button class="popup__close-button close-button">
-				<img class="close-button__button close-button-line1" src="/1.b7449005.svg" alt="line">
-				<img class="close-button__button close-button-line2" src="/2.f3b273d6.svg" alt="line">
+				<img class="close-button close-button-line1" src="/1.b7449005.svg" alt="line">
+				<img class="close-button close-button-line2" src="/2.f3b273d6.svg" alt="line">
 			</button>
 			<div class="save-text-popup__title">
 				Назови свой список
@@ -206,7 +205,9 @@
 			<div class="save-text-popup__input-wrapper">
 				<textarea placeholder="введи текст" name="" class="save-text-popup__input"></textarea>
 			</div>
-			<button class="save-text-popup__save-button">добавить в словарь</button>
+			<div class="save-wrapper">
+				<button class="save-text-popup__save-button">добавить в словарь</button>
+			</div>
 		</div>
 	</div>
 	<script src="/Personal Dictionary.e31bb0bc.js"></script>

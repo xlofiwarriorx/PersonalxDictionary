@@ -16,24 +16,19 @@ import {
 	outputField,addToDictionaryButton,contactsFooter,popupsWrapper, authPopup, saveTextPopup, 
 	authPopupCloseButton, saveTextPopupCloseButton, sourceLanguageButton, targetLanguageButton,
 	languagesList,autoDetectLanguageOption, reverseLanguagesButon, wrappedInputField, authPopupLoginButton,
-	authPopupSignupButton, registrationPopup, regPopupSigninButton, logPopupLoginButton, loginPopup
+	authPopupSignupButton, registrationPopup, regPopupSigninButton, 
+	logPopupLoginButton, loginPopup, saveTextInput, outputSection
 } from './variables'
 
-const addToCol = ()=>{
-	const file = doc(db, "USERS", 'users collections')
-	const col = collection(file, `${auth.currentUser.email}`)
-	addDoc(col, {
-		text: wrappedInputField.innerHTML,
-		createdAt: serverTimestamp(),
-		pickedWords: rememberReds
-	})
-}
-export {
-	addToCol
-}
+
 
 async function showTexts() {
 	const file = doc(db, "USERS", 'users collections')
 	const col = collection(file, `${auth.currentUser.email}`)
-	
+
 }
+
+export {
+
+}
+

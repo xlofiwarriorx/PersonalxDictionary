@@ -4,16 +4,29 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "parcel index.html --open --port 3000"
+	"dev": "parcel index.html list.html --port 3000"
   },
-  "author": "Dmitrij Stakhovich <dmitrijstahovic@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xlofiwarriorx/PersonalxDictionary.git"
+  },
+  "keywords": [],
+  "author": "Dmitrij Stakhovich <dmitrijstahovic@gmail.com",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xlofiwarriorx/PersonalxDictionary/issues"
+  },
+  "homepage": "https://github.com/xlofiwarriorx/PersonalxDictionary#readme",
   "dependencies": {
     "f": "^1.4.0",
     "fb": "^2.0.0",
-    "firebase": "^9.17.1",
+    "firebase": "^9.19.1",
     "scr": "^1.0.0",
     "scripts": "^0.1.0",
     "variables": "^1.0.1"
+  },
+  "devDependencies": {
+    "cssnano": "^6.0.0",
+    "postcss": "^8.4.21"
   }
 }
