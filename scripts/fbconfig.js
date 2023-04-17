@@ -122,7 +122,7 @@ async function showTexts() {
 		let ulValue = savedTextsList.innerHTML 
 		let rememberReds = elem.pickedWords
 		let dataObject = JSON.stringify(elem)
-		savedTextsList.innerHTML =  `${ulValue} <li class="list__item" data-id='${elem.id}' data-object='${dataObject}'> <span class="list__item-title">${elem.title} <button class="list__item-title-delete">delete</button> </span></button></span>
+		savedTextsList.innerHTML =  `${ulValue} <li class="list__item" data-id='${elem.id}' data-object='${dataObject}'> <div class="list__item-title"><div class="list__item-title-text">${elem.title}</div> <button class="list__item-title-delete">delete</button> </div></button></span>
 		<div class="list__container">
 <div class="list__item-subtitle subtitle">
 <div class="subtitle__text-block">

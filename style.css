@@ -146,11 +146,14 @@ transition: 300ms;
 
 .buttons__reverse-button {
 	background: none;
-	padding: 0px 8px;
+	/* padding: 5px; */
+
+	margin: 0px 8px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-}
+	align-items: center;
+} 
 
 .buttons__reverse-button:hover {
 	transform: translateY(-1px);
@@ -364,10 +367,15 @@ color: #5d1919;
 	background-color: rgba(0, 0, 0, 0.8);
 	position: fixed;
 	top:0;
+	
 	display: none;
 }
 .popups.open {
 	display: block;
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
 }
 .popup {
 	display: flex;
@@ -436,9 +444,9 @@ color: #5d1919;
 
 /* ----------AUTH POPUP-------------- */
 .auth-popup {
-	position: fixed;
-	left: calc(50% - 175px);
-	top: 100px;
+	/* position: fixed; */
+	/* left: calc(50% - 175px); */
+	/* top: 100px; */
 	padding: 18px 70px 50px;
 	font-size: 12px;
 	background-color: #F2F2F2;
@@ -497,9 +505,9 @@ color: #5d1919;
 
 /* ------REGISTRATION_POPUP------- */
 .registration-popup {
-	position: fixed;
-	top: 100px;
-	left: calc(50% - 180px);
+	/* position: fixed; */
+	/* top: 100px; */
+	/* left: calc(50% - 180px); */
 	background: #F2F2F2;
 	padding: 40px;
 	display: flex;
@@ -520,9 +528,9 @@ color: #5d1919;
 /* -------LOGIN__POPUP --------------*/
 
 .login-popup {
-	position: fixed;
-	top: 100px;
-	left: calc(50% - 180px);
+	/* position: fixed; */
+	/* top: 100px; */
+	/* left: calc(50% - 180px); */
 	background: #F2F2F2;
 	padding: 40px;
 	display: flex;
@@ -544,9 +552,9 @@ color: #5d1919;
 /* -------SAVE_TEXT_POPUP-------- */
 
 .save-text-popup {
-	position: fixed;
-	top: 100px;
-	left: calc(50% - 180px);
+	/* position: fixed; */
+	/* top: 100px; */
+	/* left: calc(50% - 180px); */
 	background: #F2F2F2;
 	padding: 20px 0px;
 	display: flex;
@@ -554,7 +562,7 @@ color: #5d1919;
 	justify-content: center;
 	align-items: center;
 	font-size: 12px;
-	margin: 0px -25px;
+	/* margin: 0px -25px; */
 	width: 360px;
 	z-index: 10;
 	display: none;
@@ -566,15 +574,6 @@ color: #5d1919;
 	position: absolute;
 	right: 20px;
 	top: 20px;
-}
-.close-button {
-
-}
-.close-button__button {
-}
-.close-button-line1 {
-}
-.close-button-line2 {
 }
 .save-text-popup__title {
 	padding: 20px 20px;
@@ -720,12 +719,17 @@ cursor: pointer;
 	background: #FBA3C3;
 	display: block;
 	width: 100%;
-	position: relative;
+	display: flex;
+	/* position: relative; */
 }
+.list__item-title-text {
+	width: 100%;
+}
+
 .list__item-title-delete {
-position: absolute;
-right: 20px;
-top: 15px;
+/* position: absolute; */
+max-height: 30px;
+margin-left: 15px;
 font-size: 14px;
 text-transform: lowercase;
 padding: 5px;
@@ -754,7 +758,7 @@ background-color: #2A8CC3;
 		padding: 45px 50px ;
 	}
 	.title__close-button {
-		top: -30px;
+		top: -15px;
 	}
 }
 .list__item-subtitle {

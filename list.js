@@ -105,7 +105,7 @@ function openTranslation (e) {
 }
 
 function deployText (e) {
-	if (e.target.classList.contains('list__item-title')) {
+	if (e.target.classList.contains('list__item-title' ) || e.target.classList.contains('list__item-title-text' )) {
 		// console.log(e.target.closest('.list__item').querySelector('.subtitle-title'))
 		// if (e.target.closest('.list__item').querySelector('.subtitle-title').classList.contains('open')) {
 		// 	e.target.closest('.list__item').querySelector('.subtitle-title').classList.remove('open')
