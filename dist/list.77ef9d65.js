@@ -47366,7 +47366,7 @@ function showTexts() {
 } // exports-----------------------------------------------------------------------------
 function _showTexts() {
   _showTexts = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-    var file, col;
+    var file, col, q;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
@@ -47378,8 +47378,9 @@ function _showTexts() {
           return (0, _firestore.collection)(file, "".concat(auth.currentUser.email));
         case 5:
           col = _context.sent;
-          _context.next = 8;
-          return (0, _firestore.onSnapshot)(col, function (snapshot) {
+          q = (0, _firestore.query)(col, (0, _firestore.orderBy)('createdAt', 'desc')); // await onSnapshot(col, (snapshot)=>{
+          _context.next = 9;
+          return (0, _firestore.onSnapshot)(q, function (snapshot) {
             var texts = [];
             snapshot.docs.forEach(function (doc) {
               texts.push(_objectSpread(_objectSpread({}, doc.data()), {}, {
@@ -47395,7 +47396,7 @@ function _showTexts() {
               savedTextsList.innerHTML = "".concat(ulValue, " <li class=\"list__item\" data-id='").concat(elem.id, "' data-object='").concat(dataObject, "'> <div class=\"list__item-title\"><div class=\"list__item-title-text\">").concat(elem.title, "</div> <button class=\"list__item-title-delete\">delete</button> </div></button></span>\n\t\t<div class=\"list__container\">\n<div class=\"list__item-subtitle subtitle\">\n<div class=\"subtitle__text-block\">\n\t<div class=\"subtitle__title\">\u0422\u0435\u043A\u0441\u0442</div>\n\t<div class=\"subtitle__text\">").concat(elem.text, "</div>\n</div>\n<div class=\"subtitle__words-block\">\n\t<div class=\"subtitle__title\">\u0421\u043B\u043E\u0432\u0430\u0440\u044C</div>\n\t<div class=\"subtitle__words\">").concat(elem.pickedWords, " </div>\n</div>\n<button class=\"subtitle__add-button\">\u0420\u0435\u0434.</button>\n</div>\n</div>\n</li>\n");
             });
           });
-        case 8:
+        case 9:
         case "end":
           return _context.stop();
       }
@@ -47826,6 +47827,26 @@ document.addEventListener('click', function (e) {
   }
   // openTranslation(e)
 });
+
+document.addEventListener('input', function (e) {
+  if (e.target.classList.contains('title__search-input')) {
+    var val = e.target.value.trim();
+    var items = document.querySelectorAll('.list__item-title-text');
+    if (val != '') {
+      items.forEach(function (elem) {
+        if (elem.textContent.search(val) == -1) {
+          elem.closest('.list__item').classList.add('hidden');
+        } else {
+          elem.closest('.list__item').classList.remove('hidden');
+        }
+      });
+    } else {
+      items.forEach(function (elem) {
+        elem.closest('.list__item').classList.remove('hidden');
+      });
+    }
+  }
+});
 },{"./scripts/title":"scripts/title.js","./scripts/fbconfig":"scripts/fbconfig.js","./scripts/functions":"scripts/functions.js"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -47851,7 +47872,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50219" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59032" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

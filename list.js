@@ -152,4 +152,24 @@ document.addEventListener('click', (e)=>{
 
 
 
-
+document.addEventListener('input', (e)=>{
+	     if(e.target.classList.contains('title__search-input')) {
+		         let val = e.target.value.trim()
+		         let items = document.querySelectorAll('.list__item-title-text')
+		        if (val != '') {
+		            items.forEach((elem)=> {
+		                 if(elem.textContent.search(val) == -1) {
+		                     elem.closest('.list__item').classList.add('hidden')
+		                }
+		                 else {
+		                     elem.closest('.list__item').classList.remove('hidden')
+		                 }
+		             })
+		         }
+		         else {
+		             items.forEach((elem)=>{
+		                 elem.closest('.list__item').classList.remove('hidden')
+		             })
+		         }
+		     }
+		 })

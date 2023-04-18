@@ -109,7 +109,9 @@ function loginWithEmail (email, password) {
 async function showTexts() {
 	const file = await doc(db, "USERS", 'users collections')
 	const col = await collection(file, `${auth.currentUser.email}`)
-	await onSnapshot(col, (snapshot)=>{
+	const q = query(col, orderBy('createdAt', 'desc'))
+	// await onSnapshot(col, (snapshot)=>{
+	await onSnapshot(q, (snapshot)=>{
 		let texts = []
 		snapshot.docs.forEach((doc)=>{
 		texts.push({
